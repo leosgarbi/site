@@ -1,28 +1,31 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from '@/components/theme-provider';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import type React from 'react';
+import './globals.css';
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "DevPortfolio | Desenvolvedor Front-End Júnior",
-  description: "Portfolio de desenvolvedor front-end especializado em React, Next.js e Tailwind CSS",
-    generator: 'v0.app'
-}
+  title: 'DevPortfolio | Desenvolvedor Front-End Júnior',
+  description:
+    'Portfolio de desenvolvedor front-end especializado em React, Next.js e Tailwind CSS',
+  generator: 'v0.app',
+  icons: {
+    icon: '/favicon.ico',
+  },
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
-
