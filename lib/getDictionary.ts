@@ -6,5 +6,23 @@ const dictionaries: Record<Locale, () => Promise<any>> = {
 };
 
 export const getDictionary = async (locale: Locale) => {
-  return dictionaries[locale]();
+  const loader = (dictionaries as any)[locale] ?? dictionaries['pt-BR'];
+
+  if (typeof loader === 'function') {
+    try {
+      return await loader();
+    } catch (err) {
+      console.error('Error loading dictionary for', locale, err);
+
+      return await dictionaries['pt-BR']();
+    }
+  }
+
+  try {
+    const res = await Promise.resolve(loader);
+    return res?.default ?? res;
+  } catch (err) {
+    console.error('Unexpected dictionary format for', locale, err);
+    return await dictionaries['pt-BR']();
+  }
 };
