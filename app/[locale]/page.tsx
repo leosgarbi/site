@@ -1,18 +1,15 @@
-import LanguageSwitcher from '@/components/LanguageSwitcher';
+import LanguageSwitcher from '@/components/language-switcher';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { getDictionary } from '@/lib/getDictionary';
 import { Locale } from '@/lib/i18n';
-import { Badge, Github, Linkedin, Mail } from 'lucide-react';
+import { ExternalLink, Github, Linkedin, Mail } from 'lucide-react';
 import Image from 'next/image';
 
-export default async function Home({
-  params,
-}: {
-  params: Promise<{ locale: Locale }>;
-}) {
-  const { locale } = await params;
+export default async function Home({ params }: { params: { locale: Locale } }) {
+  const { locale } = params;
   const t = await getDictionary(locale);
 
   return (
@@ -140,25 +137,6 @@ export default async function Home({
           </div>
         </section>
 
-        {/* Skills */}
-        {/* <section id='skills' className='space-y-6 py-16'>
-          <h2 className='font-bold text-3xl tracking-tight'>
-            {t.skills.title}
-          </h2>
-
-          <Card>
-            <CardContent className='space-y-4 p-6'>
-              <h3 className='font-semibold text-xl'>{t.skills.frontend}</h3>
-
-              <div className='flex flex-wrap gap-2'>
-                {t.skills.badges.map((skill: string) => (
-                  <Badge key={skill}>{skill}</Badge>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </section> */}
-
         {/* Skills Section */}
         <section id='skills' className='space-y-6 py-16'>
           <h2 className='font-bold text-3xl tracking-tight'>Minhas Skills</h2>
@@ -195,66 +173,141 @@ export default async function Home({
               <CardContent className='space-y-4 p-6'>
                 <h3 className='font-semibold text-xl'>Soft Skills</h3>
                 <div className='flex flex-wrap gap-2'>
-                  <Badge className='bg-green-500'>Trabalho em Equipe</Badge>
-                  <Badge className='bg-indigo-500'>Comunicação</Badge>
-                  <Badge className='bg-yellow-600'>
-                    Resolução de Problemas
+                  <Badge className='bg-green-500'>
+                    {t.skills.badges.skills.team}
                   </Badge>
-                  <Badge className='bg-red-600'>Adaptabilidade</Badge>
-                  <Badge className='bg-purple-500'>Aprendizado Contínuo</Badge>
+                  <Badge className='bg-indigo-500'>
+                    {t.skills.badges.skills.cominitation}
+                  </Badge>
+                  <Badge className='bg-yellow-600'>
+                    {t.skills.badges.skills.problem}
+                  </Badge>
+                  <Badge className='bg-red-600'>
+                    {t.skills.badges.skills.adaptability}
+                  </Badge>
+                  <Badge className='bg-purple-500'>
+                    {t.skills.badges.skills.continuos}
+                  </Badge>
                 </div>
               </CardContent>
             </Card>
           </div>
         </section>
-
-        {/* Contact */}
+        {/* Projects Section */}
+        <section id='projects' className='space-y-6 py-16'>
+          <h2 className='font-bold text-3xl tracking-tight'>Projetos</h2>
+          <div className='gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+            {[1, 2, 3].map((project) => (
+              <Card key={project} className='overflow-hidden'>
+                <div className='relative w-full h-48'>
+                  <Image
+                    src={`/placeholder.svg?height=200&width=400&text=Projeto ${project}`}
+                    alt={`Projeto ${project}`}
+                    fill
+                    className='object-cover'
+                  />
+                </div>
+                <CardContent className='space-y-4 p-6'>
+                  <h3 className='font-semibold text-xl'>Projeto {project}</h3>
+                  <p className='text-muted-foreground'>
+                    Uma breve descrição do projeto, tecnologias utilizadas e
+                    desafios superados.
+                  </p>
+                  <div className='flex flex-wrap gap-2'>
+                    <Badge>React</Badge>
+                    <Badge>Next.js</Badge>
+                    <Badge>Tailwind</Badge>
+                  </div>
+                  <div className='flex gap-2 pt-2'>
+                    <Button variant='outline' size='sm'>
+                      <Github className='mr-2 w-4 h-4' /> Código
+                    </Button>
+                    <Button size='sm'>
+                      <ExternalLink className='mr-2 w-4 h-4' /> Demo
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+        {/* Contact Section */}
         <section id='contact' className='space-y-6 py-16'>
-          <h2 className='font-bold text-3xl tracking-tight'>
-            {t.contact.title}
-          </h2>
-
-          <Card>
-            <CardContent className='space-y-4 p-6'>
-              <h3 className='font-semibold text-xl'>{t.contact.connect}</h3>
-
-              <p className='text-muted-foreground'>{t.contact.description}</p>
-
-              <a
-                href='mailto:leosgarbi92@gmail.com'
-                className='flex items-center gap-2 hover:text-primary'
-              >
-                <Mail className='w-5 h-5' />
-                {t.contact.email}
-              </a>
-            </CardContent>
-          </Card>
+          <h2 className='font-bold text-3xl tracking-tight'>Contato</h2>
+          <div className='gap-8 grid grid-cols-1 md:grid-cols-2'>
+            <Card>
+              <CardContent className='space-y-4 p-6'>
+                <h3 className='font-semibold text-xl'>Vamos Conectar</h3>
+                <p className='text-muted-foreground'>
+                  Estou sempre aberto a novas oportunidades e colaborações.
+                  Sinta-se à vontade para entrar em contato comigo através dos
+                  canais abaixo.
+                </p>
+                <div className='space-y-3 pt-2'>
+                  <a
+                    href='#'
+                    className='flex items-center gap-2 hover:text-primary'
+                  >
+                    <Mail className='w-5 h-5' /> seu.email@exemplo.com
+                  </a>
+                  <a
+                    href='#'
+                    className='flex items-center gap-2 hover:text-primary'
+                  >
+                    <Linkedin className='w-5 h-5' /> LinkedIn
+                  </a>
+                  <a
+                    href='#'
+                    className='flex items-center gap-2 hover:text-primary'
+                  >
+                    <Github className='w-5 h-5' /> GitHub
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className='space-y-4 p-6'>
+                <form className='space-y-4'>
+                  <div className='space-y-2'>
+                    <label htmlFor='name' className='font-medium text-sm'>
+                      Nome
+                    </label>
+                    <input
+                      id='name'
+                      className='flex bg-background file:bg-transparent disabled:opacity-50 px-3 py-2 border border-input file:border-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ring-offset-background focus-visible:ring-offset-2 w-full h-10 file:font-medium placeholder:text-muted-foreground text-sm file:text-sm disabled:cursor-not-allowed'
+                      placeholder='Seu nome'
+                    />
+                  </div>
+                  <div className='space-y-2'>
+                    <label htmlFor='email' className='font-medium text-sm'>
+                      Email
+                    </label>
+                    <input
+                      id='email'
+                      type='email'
+                      className='flex bg-background file:bg-transparent disabled:opacity-50 px-3 py-2 border border-input file:border-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ring-offset-background focus-visible:ring-offset-2 w-full h-10 file:font-medium placeholder:text-muted-foreground text-sm file:text-sm disabled:cursor-not-allowed'
+                      placeholder='seu.email@exemplo.com'
+                    />
+                  </div>
+                  <div className='space-y-2'>
+                    <label htmlFor='message' className='font-medium text-sm'>
+                      Mensagem
+                    </label>
+                    <textarea
+                      id='message'
+                      className='flex bg-background disabled:opacity-50 px-3 py-2 border border-input rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ring-offset-background focus-visible:ring-offset-2 w-full min-h-[120px] placeholder:text-muted-foreground text-sm disabled:cursor-not-allowed'
+                      placeholder='Sua mensagem'
+                    />
+                  </div>
+                  <Button className='w-full'>Enviar Mensagem</Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
         </section>
       </main>
 
       {/* Footer */}
-      <footer className='py-6 border-t'>
-        <div className='flex md:flex-row flex-col justify-between items-center gap-4 mx-auto px-4 sm:px-6 max-w-6xl container'>
-          <p className='text-muted-foreground text-sm'>
-            {t.site.copyright.replace(
-              '{year}',
-              new Date().getFullYear().toString()
-            )}
-          </p>
-
-          <div className='flex gap-4'>
-            <a href='https://github.com/leosgarbi'>
-              <Github className='w-5 h-5' />
-            </a>
-            <a href='https://linkedin.com/in/leosgarbi'>
-              <Linkedin className='w-5 h-5' />
-            </a>
-            <a href='mailto:leosgarbi92@gmail.com'>
-              <Mail className='w-5 h-5' />
-            </a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

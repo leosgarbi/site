@@ -41,13 +41,13 @@
         "TypeScript"
       ],
       "tools": ["Git", "GitHub", "VS Code", "Figma", "Node.js", "npm"],
-      "skills": [
-        "Trabalho em Equipe",
-        "Comunicação",
-        "Resolução de Problemas",
-        "Adaptabilidade",
-        "Aprendizado Contínuo"
-      ]
+      "skills": {
+        "team": "Trabalho em Equipe",
+        "comunication": "Comunicação",
+        "resolution": "Resolução de Problemas",
+        "adaptability": "Adaptabilidade",
+        "continuos": "Aprendizado Contínuo"
+      }
     }
   },
   "projects": {
