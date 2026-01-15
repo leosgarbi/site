@@ -1,22 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-
-type ContactDictionary = {
-  title: string;
-  connectTitle: string;
-  description: string;
-  form: {
-    nameLabel: string;
-    emailLabel: string;
-    messageLabel: string;
-    submitLabel: string;
-    placeholders: {
-      name: string;
-      email: string;
-      message: string;
-    };
-  };
-};
+import { ContactTypes } from '@/types';
 
 type ContactInfo = {
   value: string;
@@ -25,7 +9,7 @@ type ContactInfo = {
 };
 
 type ContactSectionProps = {
-  t: ContactDictionary;
+  t: ContactTypes;
   contacts: ContactInfo[];
 };
 

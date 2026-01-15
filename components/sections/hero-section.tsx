@@ -1,16 +1,10 @@
 import { Button } from '@/components/ui/button';
+import { HeroTypes } from '@/types';
 import { Github, Mail } from 'lucide-react';
 import Image from 'next/image';
 
-type HeroDictionary = {
-  role: string;
-  subtitle: string;
-  contact: string;
-  github: string;
-};
-
 type HeroSectionProps = {
-  text: HeroDictionary;
+  text: HeroTypes;
   githubUrl: string;
   avatarUrl: string;
 };

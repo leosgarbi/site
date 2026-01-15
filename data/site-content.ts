@@ -20,8 +20,10 @@ export const siteContent = {
   },
   about: {
     title: 'Sobre Mim',
-    p1: 'Atuo como desenvolvedor front-end, com foco em React JS, Next, Tailwind e Styled Components, sempre buscando aprimorar minhas habilidades e contribuir para projetos inovadores.',
-    p2: 'Como desenvolvedor júnior, estou sempre em busca de aprendizado e evolução. Valorizo ambientes que incentivam o crescimento profissional e a troca de conhecimento.',
+    paragraph:
+      'Atuo como desenvolvedor front-end, com foco em React JS, Next, Tailwind e Styled Components, sempre buscando aprimorar minhas habilidades e contribuir para projetos inovadores.',
+    auxParagraph:
+      'Estou sempre em busca de aprendizado e evolução. Valorizo ambientes que incentivam o crescimento profissional e a troca de conhecimento.',
     goalTitle: 'Meta para 2026',
     goalText:
       'Desenvolver mais projetos em React e elevar minha qualidade de código.',

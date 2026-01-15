@@ -1,15 +1,7 @@
-type AboutDictionary = {
-  title: string;
-  p1: string;
-  p2: string;
-  goalTitle: string;
-  goalText: string;
-  learningTitle: string;
-  learningText: string;
-};
+import { AboutTypes } from '@/types';
 
 type AboutSectionProps = {
-  itens: AboutDictionary;
+  itens: AboutTypes;
 };
 
 export function AboutSection({ itens }: AboutSectionProps) {
@@ -19,8 +11,8 @@ export function AboutSection({ itens }: AboutSectionProps) {
 
       <div className='gap-8 grid grid-cols-1 md:grid-cols-2'>
         <div className='space-y-4'>
-          <p className='text-lg'>{itens.p1}</p>
-          <p className='text-lg'>{itens.p2}</p>
+          <p className='text-lg'>{itens.paragraph}</p>
+          <p className='text-lg'>{itens.auxParagraph}</p>
         </div>
 
         <div className='space-y-4'>

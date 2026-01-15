@@ -1,6 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { ProjectType } from '@/types';
 import { ExternalLink, Github } from 'lucide-react';
 import Image from 'next/image';
 
@@ -19,17 +20,9 @@ type ProjectsDictionary = {
   >;
 };
 
-type Project = {
-  id: string;
-  imageUrl: string;
-  technologies: string[];
-  repoUrl?: string;
-  demoUrl?: string;
-};
-
 type ProjectsSectionProps = {
   t: ProjectsDictionary;
-  projects: Project[];
+  projects: ProjectType[];
 };
 
 export function ProjectsSection({ t, projects }: ProjectsSectionProps) {

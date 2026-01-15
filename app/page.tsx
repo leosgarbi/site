@@ -7,7 +7,7 @@ import { HeroSection } from '@/components/sections/hero-section';
 import { ProjectsSection } from '@/components/sections/projects-section';
 import { SkillsSection } from '@/components/sections/skills-section';
 import { siteContent } from '@/data/site-content';
-import { skillGroups } from '@/data/skillGroups';
+import { skillGroups } from '@/data/skill-groups';
 import { Github, Linkedin, Mail } from 'lucide-react';
 
 export default function Home() {
