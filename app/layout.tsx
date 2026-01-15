@@ -7,7 +7,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'DevPortfolio | Desenvolvedor Front-End Júnior',
+  title: 'Léo Sgarbi Dev',
   description:
     'Portfolio de desenvolvedor front-end especializado em React, Next.js e Tailwind CSS',
   generator: 'v0.app',
