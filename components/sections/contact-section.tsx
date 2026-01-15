@@ -28,6 +28,7 @@ export function ContactSection({ t, contacts }: ContactSectionProps) {
             <div className='space-y-3 pt-2'>
               {contacts.map((contact, index) => (
                 <a
+                  target='_blank'
                   key={index}
                   href={contact.href}
                   className='flex items-center gap-2 hover:text-primary'
