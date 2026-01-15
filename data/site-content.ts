@@ -1,0 +1,89 @@
+export const siteContent = {
+  site: {
+    name: 'Léo Sgarbi',
+    title: 'DevPortfolio | Desenvolvedor Front-End Júnior',
+    description:
+      'Portfolio de desenvolvedor front-end especializado em React, Next.js e Tailwind CSS',
+    copyright: '© {year} Léo Sgarbi. Todos os direitos reservados.',
+  },
+  nav: {
+    about: 'Sobre',
+    skills: 'Skills',
+    projects: 'Projetos',
+    contact: 'Contato',
+  },
+  hero: {
+    role: 'Desenvolvedor Front-End',
+    subtitle: 'Construindo experiências para a web',
+    contact: 'Contato',
+    github: 'GitHub',
+  },
+  about: {
+    title: 'Sobre Mim',
+    p1: 'Atuo como desenvolvedor front-end, com foco em React JS, Next, Tailwind e Styled Components, sempre buscando aprimorar minhas habilidades e contribuir para projetos inovadores.',
+    p2: 'Como desenvolvedor júnior, estou sempre em busca de aprendizado e evolução. Valorizo ambientes que incentivam o crescimento profissional e a troca de conhecimento.',
+    goalTitle: 'Meta para 2026',
+    goalText:
+      'Desenvolver mais projetos em React e elevar minha qualidade de código.',
+    learningTitle: 'Aprendizado contínuo',
+    learningText:
+      'Trabalhando para transformar o caos do código em soluções bem estruturadas.',
+  },
+  skills: {
+    title: 'Minhas Skills',
+    frontend: 'Front-End',
+    tools: 'Ferramentas',
+    soft: 'Soft Skills',
+  },
+  contact: {
+    title: 'Contato',
+    connect: 'Vamos Conectar',
+    connectTitle: 'Vamos Conectar',
+    description:
+      'Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato comigo através dos canais abaixo.',
+    email: 'Email',
+    linkedin: 'LinkedIn',
+    github: 'GitHub',
+    form: {
+      nameLabel: 'Nome',
+      emailLabel: 'Email',
+      messageLabel: 'Mensagem',
+      submitLabel: 'Enviar Mensagem',
+      placeholders: {
+        name: 'Seu nome',
+        email: 'seu.email@exemplo.com',
+        message: 'Sua mensagem',
+      },
+    },
+  },
+  projects: {
+    title: 'Projetos',
+    description: 'Alguns dos meus projetos recentes',
+    buttons: {
+      code: 'Código',
+      demo: 'Demo',
+    },
+    items: {
+      portfolio: {
+        title: 'Portfolio',
+        description:
+          'Meu portfolio pessoal construído com React, Next.js e Tailwind CSS',
+      },
+      ecommerce: {
+        title: 'ecommerce',
+        description:
+          'Aplicação React com Vite para visualizar e gerenciar transações PIX',
+      },
+      EAD: {
+        title: 'EAD',
+        description:
+          'Aplicação React com Vite para visualizar e gerenciar transações PIX',
+      },
+    },
+  },
+  sr: {
+    github: 'GitHub',
+    linkedin: 'LinkedIn',
+    email: 'Email',
+  },
+} as const;
